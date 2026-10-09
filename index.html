@@ -451,7 +451,7 @@
 
     <!-- 上线到 velo-lab.github.io/resume/ 后 token.html 与本页同目录，./token.html 即生效；
          data-fallback 只让预览环境也能点开，正式部署留着不影响 -->
-    <a class="tokenbook" id="tokenbook" href="https://velo-lab.github.io/resume/token.html" data-fallback="https://claude.ai/code/artifact/8c33fc46-ed3b-4476-8e34-c6eddfd7c1e6" target="_blank" rel="noopener">
+    <a class="tokenbook" id="tokenbook" href="./token.html" data-fallback="https://claude.ai/code/artifact/8c33fc46-ed3b-4476-8e34-c6eddfd7c1e6" target="_blank" rel="noopener">
       <div class="tb-head"><span class="tb-title">Token 账本</span><span class="tb-live" id="tbLive">数据接入中</span></div>
       <div class="tb-stats">
         <div class="tb-stat"><span class="tb-num" id="tbToday">1–5 亿</span><span class="tb-cap" id="tbTodayCap">日均</span></div>
@@ -748,7 +748,7 @@
   (function(){
     var box = document.getElementById('tokenbook');
     if (!box) return;
-    fetch('https://velo-lab.github.io/resume/token.html', { method: 'HEAD' })
+    fetch('./token.html', { method: 'HEAD' })
       .then(function(r){ if (!r.ok && box.dataset.fallback) box.href = box.dataset.fallback; })
       .catch(function(){ if (box.dataset.fallback) box.href = box.dataset.fallback; });
     var YI = 1e8;
